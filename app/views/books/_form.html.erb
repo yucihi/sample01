@@ -1,0 +1,18 @@
+<%= form_for @book do |f|%>
+
+<p>
+  <%= f.label :title %>
+  <%= f.text_field :title %>
+</p>
+<p>
+  <%= f.label :isbn %>
+  <%= f.text_field :isbn %>
+</p>
+<p>
+  <%= f.label :price %>
+  <%= f.number_field :price %>
+</p>
+<p>
+  <%= f.submit "保存" %>
+</p>
+<% end %>
