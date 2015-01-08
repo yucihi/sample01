@@ -1,5 +1,12 @@
 <%= form_for @book do |f|%>
 
+<% if @book.errors.any? %>
+<p>エラーが発生しました</p>
+<% @book.errors.full_messages.each do |message| %>
+<p style="color: red;"><%= message%></p>
+<% end %>
+<% end %>
+
 <p>
   <%= f.label :title %>
   <%= f.text_field :title %>
