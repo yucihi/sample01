@@ -1,4 +1,5 @@
 Rails.application.routes.draw do
-  resources :books
-  resources :reviews
+  resources :books do
+    resources :reviews
+  end
 end

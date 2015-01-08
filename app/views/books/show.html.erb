@@ -16,4 +16,16 @@
     <th>価格</th>
     <td><%= number_to_currency @book.price, unit: "¥" %></td>
   </tr>
+    <tr>
+    <th>レビュー</th>
+    <td>
+      <% @book.reviews.each do |review| %>
+      <p><%= simple_format review.body %></p>
+      <hr>
+      <% end %>
+    </td>
+  </tr>
+
 </table>
+
+<%= link_to "レビューを書く", new_book_review_path(@book) %>

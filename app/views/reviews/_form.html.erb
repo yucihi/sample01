@@ -1,0 +1,17 @@
+<%= form_for [:book, @review] do |f|%>
+
+<% if @review.errors.any? %>
+<p>エラーが発生しました</p>
+<% @review.errors.full_messages.each do |message| %>
+<p style="color: red;"><%= message%></p>
+<% end %>
+<% end %>
+
+<p>
+  <%= f.label :body %>
+  <%= f.text_area :body %>
+</p>
+<p>
+  <%= f.submit "保存" %>
+</p>
+<% end %>
